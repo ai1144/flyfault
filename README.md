@@ -2,9 +2,9 @@
 
 **A causal lesion laboratory for an embodied virtual fly**
 
-![Synchronized NeuroMechFly replay of intact, left lesion and rescue trials](media/hero.png)
+![Synchronized NeuroMechFly replay of intact, left lesion and rescue trials](hero.png)
 
-[Watch the local preview](media/preview.gif) · [Methods](docs/methods.md) · [Reproducibility](docs/reproducibility.md)
+[Watch the local preview](preview.gif) · [Methods](methods.md) · [Reproducibility](reproducibility.md)
 
 How does silencing part of a spiking sensorimotor circuit change navigation in a biomechanically simulated fly? Can a current driven by local odor samples recover some of that behavior? FLY//FAULT couples a 100-neuron Brian2 circuit to the official FlyGym 2.1.1 turning controller. MuJoCo integrates the resulting joint and adhesion commands on CPU.
 
@@ -47,7 +47,7 @@ Open the loopback URL printed by the dashboard, normally `http://127.0.0.1:8501`
 
 ## Recorded study
 
-See [the executed study and verification record](docs/results.md) for measured outcomes, raw artifact locations, and commands. Replay composition uses the first configured seed and stimulus side. The atlas includes every demo trial. Each episode has a manifest, raw spiking and kinematic arrays, a JSON summary, a saved FlyGym trajectory, and the compatible compiled MuJoCo model. Plots can be rebuilt from saved data with `render --plots-only`.
+See [the executed study and verification record](results.md) for measured outcomes, raw artifact locations, and commands. Replay composition uses the first configured seed and stimulus side. The atlas includes every demo trial. Each episode has a manifest, raw spiking and kinematic arrays, a JSON summary, a saved FlyGym trajectory, and the compatible compiled MuJoCo model. Plots can be rebuilt from saved data with `render --plots-only`.
 
 ## Troubleshooting and credits
 

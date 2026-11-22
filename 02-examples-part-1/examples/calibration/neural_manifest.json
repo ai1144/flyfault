@@ -1,0 +1,187 @@
+{
+  "artifacts": [
+    "probe_windows.csv",
+    "input_response.png",
+    "input_response.svg"
+  ],
+  "base_concentration": 0.23,
+  "circuit": {
+    "backend": "Brian2 NumPy runtime",
+    "decision_s": 0.02,
+    "dt_s": 0.0005,
+    "edges": [
+      {
+        "kind": "excitatory",
+        "source": "sensory_left",
+        "synapses": 120,
+        "target": "premotor_left",
+        "weight_pa": 21.0
+      },
+      {
+        "kind": "excitatory",
+        "source": "sensory_right",
+        "synapses": 120,
+        "target": "premotor_right",
+        "weight_pa": 21.0
+      },
+      {
+        "kind": "excitatory",
+        "source": "sensory_left",
+        "synapses": 48,
+        "target": "inhibitory_left",
+        "weight_pa": 24.0
+      },
+      {
+        "kind": "excitatory",
+        "source": "sensory_right",
+        "synapses": 48,
+        "target": "inhibitory_right",
+        "weight_pa": 24.0
+      },
+      {
+        "kind": "inhibitory",
+        "source": "inhibitory_left",
+        "synapses": 80,
+        "target": "premotor_right",
+        "weight_pa": -18.0
+      },
+      {
+        "kind": "inhibitory",
+        "source": "inhibitory_right",
+        "synapses": 80,
+        "target": "premotor_left",
+        "weight_pa": -18.0
+      },
+      {
+        "kind": "excitatory",
+        "source": "reserve",
+        "synapses": 80,
+        "target": "premotor_left",
+        "weight_pa": 2.0
+      },
+      {
+        "kind": "excitatory",
+        "source": "reserve",
+        "synapses": 80,
+        "target": "premotor_right",
+        "weight_pa": 2.0
+      }
+    ],
+    "intervention": {
+      "affected_neuron_indices": [],
+      "affected_population": null,
+      "condition": "intact",
+      "descending_frozen": false,
+      "lesion_fraction": 0.0,
+      "method": "none",
+      "realized_fraction_of_affected_population": 0.0,
+      "start_s": null,
+      "stimulation": null
+    },
+    "model": "phenomenological, connectome-inspired leaky integrate-and-fire microcircuit",
+    "parameters": {
+      "bias_current_pa_by_population": {
+        "inhibitory_left": 141.0,
+        "inhibitory_right": 141.0,
+        "premotor_left": 151.0,
+        "premotor_right": 151.0,
+        "reserve": 175.0,
+        "sensory_left": 115.0,
+        "sensory_right": 115.0
+      },
+      "membrane_resistance_mohm": 100.0,
+      "membrane_tau_ms": 10.0,
+      "paired_uniform_bias_jitter_half_width_pa": 10.0,
+      "per_neuron_per_window_current_noise_sd_pa": 6.0,
+      "refractory_ms": 2.0,
+      "reset_mv": -65.0,
+      "rest_mv": -65.0,
+      "sensory_gain_pa_per_concentration": 240.0,
+      "synaptic_tau_ms": 5.0,
+      "threshold_mv": -50.0
+    },
+    "populations": [
+      {
+        "name": "sensory_left",
+        "start": 0,
+        "stop": 12
+      },
+      {
+        "name": "sensory_right",
+        "start": 12,
+        "stop": 24
+      },
+      {
+        "name": "premotor_left",
+        "start": 24,
+        "stop": 44
+      },
+      {
+        "name": "premotor_right",
+        "start": 44,
+        "stop": 64
+      },
+      {
+        "name": "inhibitory_left",
+        "start": 64,
+        "stop": 72
+      },
+      {
+        "name": "inhibitory_right",
+        "start": 72,
+        "stop": 80
+      },
+      {
+        "name": "reserve",
+        "start": 80,
+        "stop": 100
+      }
+    ],
+    "state_neuron_indices": [
+      0,
+      12,
+      24,
+      44,
+      64,
+      72,
+      80
+    ]
+  },
+  "contrasts": [
+    -0.06,
+    -0.03,
+    -0.01,
+    0.0,
+    0.01,
+    0.03,
+    0.06
+  ],
+  "decision_s": 0.02,
+  "discard_initial_windows_from_figure": 5,
+  "machine": "arm64",
+  "neural_dt_s": 0.0005,
+  "packages": {
+    "brian2": "2.9.0",
+    "matplotlib": "3.11.2",
+    "numpy": "2.2.6"
+  },
+  "protocol": "isolated intact circuit, fixed sensory contrast, fresh circuit per seed and contrast",
+  "python": "3.12.13",
+  "readout": {
+    "command_order": [
+      "left_leg_drive",
+      "right_leg_drive"
+    ],
+    "left_positive_contrast": "decreases left drive and increases right drive",
+    "neutral_drive": 0.82,
+    "rate_scale_hz": 18.0,
+    "smoothing_tau_s": 0.06,
+    "steering_range": 0.38
+  },
+  "seeds": [
+    101,
+    102,
+    103
+  ],
+  "windows": 20
+}

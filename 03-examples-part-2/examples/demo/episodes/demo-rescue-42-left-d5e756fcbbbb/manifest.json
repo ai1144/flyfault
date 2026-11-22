@@ -1,0 +1,513 @@
+{
+  "artifacts": {
+    "replay_mp4": "media/replay.mp4",
+    "signals": "signals.npz",
+    "summary": "summary.json"
+  },
+  "condition": "rescue",
+  "config": {
+    "arena": {
+      "limit_mm": 100.0,
+      "sigma_mm": 11.0,
+      "source_radius_mm": 3.0,
+      "source_xy_mm": [
+        18.0,
+        8.0
+      ],
+      "start_xy_mm": [
+        0.0,
+        0.0
+      ],
+      "start_yaw_rad": 0.0
+    },
+    "circuit": {
+      "lesion_fraction": 0.5
+    },
+    "conditions": [
+      "intact",
+      "lesion_left",
+      "lesion_right",
+      "sham_random",
+      "rescue",
+      "no_neural_control"
+    ],
+    "media": {
+      "fps": 25,
+      "playback_speed": 0.25
+    },
+    "name": "demo",
+    "seeds": [
+      42,
+      43
+    ],
+    "stimulus_sides": [
+      "left",
+      "right"
+    ],
+    "timing": {
+      "decision_s": 0.02,
+      "duration_s": 2.0,
+      "neural_dt_s": 0.0005
+    }
+  },
+  "config_sha256": "ed155b201e4c16507b20cff9f059c7f60af6bcb9963c4c89a6ae498345a93163",
+  "cpu_benchmark": {
+    "decision_updates": 100,
+    "loop_wall_s": 15.513274832861498,
+    "mean_neural_update_ms": 51.86728662112728,
+    "mean_physics_per_decision_ms": 103.18008918315172,
+    "p95_neural_update_ms": 63.11702096136286,
+    "simulated_s_per_wall_s": 0.12892184413334418
+  },
+  "effective_config_sha256": "728796f62bf6f4c97e073fdbffe6798118f106b8924a92d46518ea966a4fcc7f",
+  "git_revision": null,
+  "intervention": {
+    "affected_neuron_indices": [
+      24,
+      25,
+      26,
+      27,
+      30,
+      33,
+      34,
+      36,
+      37,
+      42
+    ],
+    "affected_population": "premotor_left",
+    "condition": "rescue",
+    "descending_frozen": false,
+    "lesion_fraction": 0.5,
+    "method": "disabled spike emission",
+    "realized_fraction_of_affected_population": 0.5,
+    "start_s": 0.0,
+    "stimulation": {
+      "level_gain_pa": 140.0,
+      "max_current_pa": 150.0,
+      "positive_left_contrast_gain_pa": 1200.0,
+      "start_s": 0.0,
+      "target_neuron_indices": [
+        28,
+        29,
+        31,
+        32,
+        35,
+        38,
+        39,
+        40,
+        41,
+        43
+      ],
+      "target_population": "premotor_left",
+      "waveform": "constant per neural decision window, in pA per surviving neuron"
+    }
+  },
+  "kind": "episode",
+  "machine": "arm64",
+  "macos_version": "26.5",
+  "network": {
+    "backend": "Brian2 NumPy runtime",
+    "decision_s": 0.02,
+    "dt_s": 0.0005,
+    "edges": [
+      {
+        "kind": "excitatory",
+        "source": "sensory_left",
+        "synapses": 120,
+        "target": "premotor_left",
+        "weight_pa": 21.0
+      },
+      {
+        "kind": "excitatory",
+        "source": "sensory_right",
+        "synapses": 120,
+        "target": "premotor_right",
+        "weight_pa": 21.0
+      },
+      {
+        "kind": "excitatory",
+        "source": "sensory_left",
+        "synapses": 48,
+        "target": "inhibitory_left",
+        "weight_pa": 24.0
+      },
+      {
+        "kind": "excitatory",
+        "source": "sensory_right",
+        "synapses": 48,
+        "target": "inhibitory_right",
+        "weight_pa": 24.0
+      },
+      {
+        "kind": "inhibitory",
+        "source": "inhibitory_left",
+        "synapses": 80,
+        "target": "premotor_right",
+        "weight_pa": -18.0
+      },
+      {
+        "kind": "inhibitory",
+        "source": "inhibitory_right",
+        "synapses": 80,
+        "target": "premotor_left",
+        "weight_pa": -18.0
+      },
+      {
+        "kind": "excitatory",
+        "source": "reserve",
+        "synapses": 80,
+        "target": "premotor_left",
+        "weight_pa": 2.0
+      },
+      {
+        "kind": "excitatory",
+        "source": "reserve",
+        "synapses": 80,
+        "target": "premotor_right",
+        "weight_pa": 2.0
+      }
+    ],
+    "intervention": {
+      "affected_neuron_indices": [
+        24,
+        25,
+        26,
+        27,
+        30,
+        33,
+        34,
+        36,
+        37,
+        42
+      ],
+      "affected_population": "premotor_left",
+      "condition": "rescue",
+      "descending_frozen": false,
+      "lesion_fraction": 0.5,
+      "method": "disabled spike emission",
+      "realized_fraction_of_affected_population": 0.5,
+      "start_s": 0.0,
+      "stimulation": {
+        "level_gain_pa": 140.0,
+        "max_current_pa": 150.0,
+        "positive_left_contrast_gain_pa": 1200.0,
+        "start_s": 0.0,
+        "target_neuron_indices": [
+          28,
+          29,
+          31,
+          32,
+          35,
+          38,
+          39,
+          40,
+          41,
+          43
+        ],
+        "target_population": "premotor_left",
+        "waveform": "constant per neural decision window, in pA per surviving neuron"
+      }
+    },
+    "model": "phenomenological, connectome-inspired leaky integrate-and-fire microcircuit",
+    "parameters": {
+      "bias_current_pa_by_population": {
+        "inhibitory_left": 141.0,
+        "inhibitory_right": 141.0,
+        "premotor_left": 151.0,
+        "premotor_right": 151.0,
+        "reserve": 175.0,
+        "sensory_left": 115.0,
+        "sensory_right": 115.0
+      },
+      "membrane_resistance_mohm": 100.0,
+      "membrane_tau_ms": 10.0,
+      "paired_uniform_bias_jitter_half_width_pa": 10.0,
+      "per_neuron_per_window_current_noise_sd_pa": 6.0,
+      "refractory_ms": 2.0,
+      "reset_mv": -65.0,
+      "rest_mv": -65.0,
+      "sensory_gain_pa_per_concentration": 240.0,
+      "synaptic_tau_ms": 5.0,
+      "threshold_mv": -50.0
+    },
+    "populations": [
+      {
+        "name": "sensory_left",
+        "start": 0,
+        "stop": 12
+      },
+      {
+        "name": "sensory_right",
+        "start": 12,
+        "stop": 24
+      },
+      {
+        "name": "premotor_left",
+        "start": 24,
+        "stop": 44
+      },
+      {
+        "name": "premotor_right",
+        "start": 44,
+        "stop": 64
+      },
+      {
+        "name": "inhibitory_left",
+        "start": 64,
+        "stop": 72
+      },
+      {
+        "name": "inhibitory_right",
+        "start": 72,
+        "stop": 80
+      },
+      {
+        "name": "reserve",
+        "start": 80,
+        "stop": 100
+      }
+    ],
+    "state_neuron_indices": [
+      0,
+      12,
+      24,
+      44,
+      64,
+      72,
+      80
+    ]
+  },
+  "packages": {
+    "Brian2": "2.9.0",
+    "Cython": "3.3.1",
+    "ImageIO": "2.38.1",
+    "Jinja2": "3.1.6",
+    "MarkupSafe": "3.0.4",
+    "PyOpenGL": "3.1.10",
+    "PyYAML": "6.0.3",
+    "Pygments": "2.21.0",
+    "absl-py": "2.5.1",
+    "altair": "6.3.0",
+    "anyio": "4.16.0",
+    "asttokens": "3.0.2",
+    "attrs": "26.1.0",
+    "certifi": "2026.10.23",
+    "charset-normalizer": "3.5.2",
+    "click": "8.5.1",
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "etils": "1.15.0",
+    "executing": "2.3.0",
+    "flyfault": "0.1.0",
+    "flygym": "2.1.1",
+    "fonttools": "4.68.0",
+    "fsspec": "2026.9.0",
+    "glfw": "2.11.0",
+    "h11": "0.16.0",
+    "idna": "3.20",
+    "imageio-ffmpeg": "0.6.0",
+    "iniconfig": "2.3.1",
+    "ipython": "9.18.1",
+    "ipython_pygments_lexers": "1.1.1",
+    "itsdangerous": "2.2.0",
+    "jaxtyping": "0.3.7",
+    "jedi": "0.20.1",
+    "jsonschema": "4.26.0",
+    "jsonschema-specifications": "2025.9.1",
+    "kiwisolver": "1.5.1",
+    "llvmlite": "0.50.0",
+    "loguru": "0.7.3",
+    "matplotlib": "3.11.2",
+    "matplotlib-inline": "0.2.2",
+    "mediapy": "1.2.7",
+    "mpmath": "1.3.0",
+    "mujoco": "3.16.0",
+    "narwhals": "2.28.0",
+    "numba": "0.68.1",
+    "numpy": "2.2.6",
+    "packaging": "26.3",
+    "pandas": "3.1.1",
+    "parso": "0.8.7",
+    "pexpect": "4.9.0",
+    "pillow": "12.3.0",
+    "plotly": "6.9.0",
+    "pluggy": "1.7.0",
+    "prompt_toolkit": "3.0.53",
+    "protobuf": "7.36.2",
+    "psutil": "7.2.2",
+    "ptyprocess": "0.7.0",
+    "pure_eval": "0.2.4",
+    "pyarrow": "26.0.1",
+    "pydeck": "0.9.3",
+    "pyparsing": "3.3.3",
+    "pytest": "9.2.0",
+    "python-dateutil": "4.0.0",
+    "python-multipart": "0.0.33",
+    "referencing": "0.37.0",
+    "requests": "2.34.2",
+    "rpds-py": "2026.9.1",
+    "ruff": "0.17.4",
+    "scipy": "1.18.1",
+    "setuptools": "84.2.1",
+    "stack-data": "0.6.3",
+    "starlette": "1.10.0",
+    "streamlit": "1.67.0",
+    "sympy": "1.14.0",
+    "tabulate": "0.9.0",
+    "traitlets": "5.16.1",
+    "typing_extensions": "4.16.0",
+    "tzdata": "2026.6",
+    "urllib3": "2.8.0",
+    "uvicorn": "0.54.0",
+    "wadler_lindig": "0.1.8",
+    "wcwidth": "0.9.4",
+    "websockets": "17.4",
+    "zipp": "4.1.2"
+  },
+  "physical_model": {
+    "assets": {
+      "files_sha256": {
+        "meshes/simplified_max2000faces/c_abdomen12.stl": "656b60100c06b0a8eb2dfbd201b12cac5eb31ffec6bf9c6c4ff3f97d14376371",
+        "meshes/simplified_max2000faces/c_abdomen3.stl": "264af5ede95bfcb11720219b31c76141a0921394f7c46e7fb7fb6b7066880f3b",
+        "meshes/simplified_max2000faces/c_abdomen4.stl": "662bbc3af32a987511af04e437d02c40e99840960809f5020abe9ec91b226ca4",
+        "meshes/simplified_max2000faces/c_abdomen5.stl": "87d1de98ad39ba52c096e0fd3b4860ae3a0aadeb4be46cac824e9b2501be6c48",
+        "meshes/simplified_max2000faces/c_abdomen6.stl": "748dda76a46554fd1743113eaafdf0dc2d10546095f5420406745e0eb47f87fb",
+        "meshes/simplified_max2000faces/c_haustellum.stl": "babceb7a6adf0c88e8de6ce9810c32b397d3d1cdd073c0b1bea1df9d8c6ac4e9",
+        "meshes/simplified_max2000faces/c_head.stl": "39c51acbdf5957af95e294fa485cd7602103ca83bf451e95e29d251bd43765b6",
+        "meshes/simplified_max2000faces/c_rostrum.stl": "4ed0fa33c5867013482011e2ff656b71189f2b29dfb0bda2b0797961d95d12e4",
+        "meshes/simplified_max2000faces/c_thorax.stl": "b7fac1a3bcbad2100d063bae2ae6e81217e808f3c32564763ee7e43ec3904969",
+        "meshes/simplified_max2000faces/l_arista.stl": "6201af1cbe213ee6e259a6d89df65080f9cb9d806e6526cbcc7c5f1ae793f97c",
+        "meshes/simplified_max2000faces/l_eye.stl": "08ce40c3264c9ab87703b6c013eae39d1bc48fa3e4cf02aec06d529c94e70daf",
+        "meshes/simplified_max2000faces/l_funiculus.stl": "d2a6d35751922fb8b1ce07b269bc432f33d7f8f6d243b2dd1801e021b91d8156",
+        "meshes/simplified_max2000faces/l_haltere.stl": "13d77fcca66fca90db5cf00b33a7369ae80366fe39974df3667e709882e64ed6",
+        "meshes/simplified_max2000faces/l_pedicel.stl": "6de0f06e57c78f8738f67c0c52b85e74cb105789497a4183944e90211d3a4bf4",
+        "meshes/simplified_max2000faces/l_wing.stl": "142f77f15008fd75e1490b546bb859cf98c056121f1abd65acea2052c4e7764c",
+        "meshes/simplified_max2000faces/lf_coxa.stl": "bff053bfee772796dae2b396aa0e3be12919b7fb1ee33b5fde369bec00944b64",
+        "meshes/simplified_max2000faces/lf_femur.stl": "387be32d0fb6b63df14347c3c6110461ae520f6c5027d536e8ff41d17342f9c8",
+        "meshes/simplified_max2000faces/lf_tarsus1.stl": "29085dda732699c4a3110458303adf2eec667f7db6e42166d408c260ae6acf5e",
+        "meshes/simplified_max2000faces/lf_tarsus2.stl": "996735c15a7e8e0c022babf5500224fa6e23de0e277305279d4b6787d56335d8",
+        "meshes/simplified_max2000faces/lf_tarsus3.stl": "166044083a5a4a0e8b7db91cdd71ef0ea0e3feb18f1630955156de14931d9495",
+        "meshes/simplified_max2000faces/lf_tarsus4.stl": "c90d8c6ebd0e2384a45524944e4fb2e02ba413be26ee04bc5030b2afb5876943",
+        "meshes/simplified_max2000faces/lf_tarsus5.stl": "93b048052461fa756a767608418ec90e537435a1ff282f2a393faa45ba60ae73",
+        "meshes/simplified_max2000faces/lf_tibia.stl": "8138fe5f1fc52588dca6677bb338d39451813ac96159f78d6cf677eba73f3862",
+        "meshes/simplified_max2000faces/lf_trochanter.stl": "5a4a5a17a756dd23ed4fdf0e05732d686de3f460de9cdeea5f71e086c7820b7d",
+        "meshes/simplified_max2000faces/lf_trochanterfemur.stl": "50e4e7baf2852a369f0dda2a2c9708a68c45893b3019a79dd74799e8e2ea64c9",
+        "meshes/simplified_max2000faces/lh_coxa.stl": "ad3a10789b8bd5e0f3db2667a1fe373ffdb83cfc876b34d60508e9e34a51366d",
+        "meshes/simplified_max2000faces/lh_femur.stl": "26386c825d82f631c74c0787a08a4785e1a33fee834cce4c4348da485af7166c",
+        "meshes/simplified_max2000faces/lh_tarsus1.stl": "61af16259215525e092d61426b874c7855485a9c7cfa91eecfc2fe99281a2dc6",
+        "meshes/simplified_max2000faces/lh_tarsus2.stl": "da796bc3ad5d355b9e941aeeb6ad96c7fb00dee7421995605dcc81cd6fd7af12",
+        "meshes/simplified_max2000faces/lh_tarsus3.stl": "08280c942abf91279e86414d064f39cae2b46ba9f62845252a9763d0839fabe5",
+        "meshes/simplified_max2000faces/lh_tarsus4.stl": "623f9059236af1327770f6f8e5e4fb8dc87930c49f5559c36d3d4245f51f7678",
+        "meshes/simplified_max2000faces/lh_tarsus5.stl": "1b86c811928d0a6e04c693b9a213f06c0f7a037584252fc8f35d408be1bf87e8",
+        "meshes/simplified_max2000faces/lh_tibia.stl": "2853873ade9abeb35da5f1a6c822d223bbe19a50d8ed77921bb77743b4782a60",
+        "meshes/simplified_max2000faces/lh_trochanter.stl": "80632e2a787165a097caf8e0e5e8b5f700bfc27b505f0ec6c10c68bbcbc61ab8",
+        "meshes/simplified_max2000faces/lh_trochanterfemur.stl": "8e6b7ee8c4f6c388b64250086acc952c10abd469ac7bf0fb7015c2837e53d423",
+        "meshes/simplified_max2000faces/lm_coxa.stl": "01a6f4f4147b7cd308f0a1db79786694632c9fe5a3425b5e3454a7fa7624897b",
+        "meshes/simplified_max2000faces/lm_femur.stl": "39eb3dd82c7b34a735b6dd176eb5972c40d395bba9f838472b61dda2aeb177e2",
+        "meshes/simplified_max2000faces/lm_tarsus1.stl": "b7f50bfe1e75dfa65110a4f80e0216858a7a75712115b04605f344c8e837b1ae",
+        "meshes/simplified_max2000faces/lm_tarsus2.stl": "2dbb000ae11ef58de0023ccbdbfc8f1c5ff7b7517824a58d3e204f3ee00770c4",
+        "meshes/simplified_max2000faces/lm_tarsus3.stl": "8f1814f0054382e037279f04d0bb998e36ccaabd57ec418d35dd6f7e47bd51bb",
+        "meshes/simplified_max2000faces/lm_tarsus4.stl": "3f2881bd6f1fdb445bf01c00cac53c9a1b30388cd3fdc1b327704c60f138bf03",
+        "meshes/simplified_max2000faces/lm_tarsus5.stl": "3e9a76e4c0c4e829705271846f93a3aa056a0e87bc99996519722eeb841c1b70",
+        "meshes/simplified_max2000faces/lm_tibia.stl": "dc1ad6da6db91ba703150e6150f59a498f9dbd311b1ec0678da3f896c421dab5",
+        "meshes/simplified_max2000faces/lm_trochanter.stl": "03db651b8da4d1bcc36e439aea2c13bc18a9fbcf6b82bc7c94cc70a66960e187",
+        "meshes/simplified_max2000faces/lm_trochanterfemur.stl": "9619105028e5006d891b12dfced77aafa3c41a599edbf49d14691907ce2eb502",
+        "mujoco_globals.yaml": "e5b70e5bd5199ab2a9a68eb119ce9ef3f0b1dfa1890e13f1adb6d6cc20579988",
+        "rigging.yaml": "4e51d5ed3f151aefc125c91ff9298921b3b79a9d64e03e6fe88f1ce9945dbe3d",
+        "rigging_separate_trochanterfemur.yaml": "d6319e090a566e74b2320c0e0c91d63522069b9b76840aa453e02674f34f2458",
+        "vision.yaml": "aeaf9c67603e85ac81d251a01e7a20821687c1a62be0626af49ef09919e10545",
+        "visuals.yaml": "045d5ec76b49b9f3170f1a903584894aa856033c68a1c6b0ff759382d60fea7d"
+      },
+      "mesh_resolution": "SIMPLIFIED_MAX2000FACES",
+      "origin": "NeuroMechFly meshes and YAML supplied by the FlyGym distribution"
+    },
+    "camera": "flyfault/replay",
+    "controller": "flygym_demo.complex_terrain.HybridTurningController",
+    "episode_end_s": 1.9999999999999012,
+    "first_frame_s": 0.0,
+    "fps": 25,
+    "frame_count": 201,
+    "last_frame_s": 1.9999999999999012,
+    "model_sha256": "9c3b0d4602fdb7033e1af60cec9e6ca4bc4ef6c399aa2465f28adb53a3dbf799",
+    "physical_model": "NeuroMechFly legs-only / FlatGroundWorld",
+    "playback_speed": 0.25,
+    "qpos_size": 73,
+    "warmup_s": 0.050000000000000405
+  },
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "publication": {
+    "description": "Privacy-reviewed subset of the actual 2026-11-10 paired pilot",
+    "omitted_files": [
+      "model.mjb",
+      "trajectory.npz",
+      "replay.json",
+      "raw execution logs"
+    ],
+    "redacted_metadata": [
+      "python_executable",
+      "command",
+      "started_at",
+      "finished_at",
+      "updated_at"
+    ],
+    "scientific_arrays": "Unchanged numeric signals and original per-trial summaries"
+  },
+  "python": "3.12.13 (main, Jun 23 2026, 15:44:24) [Clang 22.1.3 ]",
+  "python_implementation": "CPython",
+  "readout": {
+    "command_order": [
+      "left_leg_drive",
+      "right_leg_drive"
+    ],
+    "left_positive_contrast": "decreases left drive and increases right drive",
+    "neutral_drive": 0.82,
+    "rate_scale_hz": 18.0,
+    "smoothing_tau_s": 0.06,
+    "steering_range": 0.38
+  },
+  "run_id": "demo-rescue-42-left-d5e756fcbbbb",
+  "science_sha256": "3afd6f32ab0cae1303c6c68692ab12846fd41d5a323764c30dc2df320d394c96",
+  "seed": 42,
+  "sensory_model": {
+    "antennae_thorax_offsets_mm_left_right": [
+      [
+        0.9,
+        0.35,
+        0.2
+      ],
+      [
+        0.9,
+        -0.35,
+        0.2
+      ]
+    ],
+    "controller_observations": [
+      "left local concentration",
+      "right local concentration"
+    ],
+    "field_center_mm": [
+      18.0,
+      8.0
+    ],
+    "sigma_mm": 11.0,
+    "type": "normalized planar Gaussian sampled by body-fixed virtual antennae"
+  },
+  "status": "completed",
+  "stimulus_side": "left",
+  "timesteps_s": {
+    "decision": 0.02,
+    "neural": 0.0005,
+    "physics": 0.0001
+  },
+  "units": {
+    "current": "pA",
+    "descending_command": "dimensionless",
+    "heading": "rad",
+    "heading_metrics": "deg",
+    "odor": "normalized concentration",
+    "positions": "mm",
+    "rate": "Hz",
+    "time": "s",
+    "voltage": "mV"
+  }
+}

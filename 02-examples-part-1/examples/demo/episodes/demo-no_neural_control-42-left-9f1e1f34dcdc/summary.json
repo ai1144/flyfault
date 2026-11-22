@@ -1,0 +1,30 @@
+{
+  "closest_distance_mm": 6.3252835503044595,
+  "condition": "no_neural_control",
+  "distance_improvement_mm": 11.063655103213511,
+  "duration_s": 1.9999999999999012,
+  "end_distance_mm": 8.131290692913263,
+  "flipped": false,
+  "latency_s": null,
+  "mean_abs_heading_error_deg": 55.6548776218107,
+  "mean_rate_hz": [
+    100.375,
+    97.7083333333333,
+    57.325,
+    56.175,
+    70.625,
+    69.625,
+    47.3
+  ],
+  "out_of_bounds": false,
+  "path_efficiency": 0.39414763333688824,
+  "path_length_mm": 28.069825028626056,
+  "reached": false,
+  "seed": 42,
+  "signed_turn_deg": 2.8976506745420525,
+  "source_radius_mm": 3.0,
+  "start_distance_mm": 19.194945796126774,
+  "stimulus_side": "left",
+  "terminal": "timeout",
+  "total_spikes": 13430
+}

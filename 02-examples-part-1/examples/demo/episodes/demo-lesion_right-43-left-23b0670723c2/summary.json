@@ -1,0 +1,30 @@
+{
+  "closest_distance_mm": 12.742952532548845,
+  "condition": "lesion_right",
+  "distance_improvement_mm": -3.8779119699017244,
+  "duration_s": 1.9999999999999012,
+  "end_distance_mm": 23.0728577660285,
+  "flipped": false,
+  "latency_s": null,
+  "mean_abs_heading_error_deg": 97.7098769488242,
+  "mean_rate_hz": [
+    53.49999999999997,
+    54.250000000000036,
+    42.875,
+    20.275,
+    45.0,
+    44.5,
+    45.25
+  ],
+  "out_of_bounds": false,
+  "path_efficiency": -0.14075317673251678,
+  "path_length_mm": 27.551150602243208,
+  "reached": false,
+  "seed": 43,
+  "signed_turn_deg": 239.33946251671946,
+  "source_radius_mm": 3.0,
+  "start_distance_mm": 19.194945796126774,
+  "stimulus_side": "left",
+  "terminal": "timeout",
+  "total_spikes": 8354
+}

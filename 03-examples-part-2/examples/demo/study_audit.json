@@ -1,0 +1,126 @@
+{
+  "run": "demo-batch-d67381774ab6",
+  "status": "passed",
+  "episodes_audited": 24,
+  "spikes_audited": 260333,
+  "video": {
+    "frame_count": 201,
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "duration_s": 8.04,
+    "first_to_last_mean_abs_pixel_delta": 5.693372717335391
+  },
+  "outcomes": {
+    "intact": {
+      "n": 4,
+      "reached": 0,
+      "flipped": 0,
+      "out_of_bounds": 0,
+      "mean_distance_improvement_mm": 12.264341932618562,
+      "mean_path_length_mm": 28.073411299120504
+    },
+    "lesion_left": {
+      "n": 4,
+      "reached": 0,
+      "flipped": 0,
+      "out_of_bounds": 0,
+      "mean_distance_improvement_mm": -7.161792863038631,
+      "mean_path_length_mm": 27.517743963306756
+    },
+    "lesion_right": {
+      "n": 4,
+      "reached": 0,
+      "flipped": 0,
+      "out_of_bounds": 0,
+      "mean_distance_improvement_mm": -7.484107433184721,
+      "mean_path_length_mm": 27.56408564157241
+    },
+    "sham_random": {
+      "n": 4,
+      "reached": 0,
+      "flipped": 0,
+      "out_of_bounds": 0,
+      "mean_distance_improvement_mm": 12.24539431633278,
+      "mean_path_length_mm": 28.06177928892247
+    },
+    "rescue": {
+      "n": 4,
+      "reached": 2,
+      "flipped": 0,
+      "out_of_bounds": 0,
+      "mean_distance_improvement_mm": 14.702564612982663,
+      "mean_path_length_mm": 24.302054046610806
+    },
+    "no_neural_control": {
+      "n": 4,
+      "reached": 0,
+      "flipped": 0,
+      "out_of_bounds": 0,
+      "mean_distance_improvement_mm": 9.350314187291511,
+      "mean_path_length_mm": 28.18656206034091
+    }
+  },
+  "paired_vs_intact": {
+    "lesion_left": [
+      [
+        42,
+        -18.96886020950399
+      ],
+      [
+        43,
+        -19.883409381810395
+      ]
+    ],
+    "lesion_right": [
+      [
+        42,
+        -20.169767216827076
+      ],
+      [
+        43,
+        -19.32713151477949
+      ]
+    ],
+    "sham_random": [
+      [
+        42,
+        -0.12657596449488207
+      ],
+      [
+        43,
+        0.08868073192331583
+      ]
+    ],
+    "rescue": [
+      [
+        42,
+        2.6188689296500582
+      ],
+      [
+        43,
+        2.2575764310781388
+      ]
+    ],
+    "no_neural_control": [
+      [
+        42,
+        -2.920673647380484
+      ],
+      [
+        43,
+        -2.907381843273618
+      ]
+    ]
+  },
+  "paired_rescue_vs_left_lesion": [
+    [
+      42,
+      21.58772913915405
+    ],
+    [
+      43,
+      22.140985812888538
+    ]
+  ]
+}

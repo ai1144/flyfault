@@ -1,0 +1,13 @@
+FLY//FAULT GitHub browser upload
+
+Upload the three numbered batches in order.
+For each batch, open its folder, select all contents, and drag them onto the repository upload page.
+Place each batch at the repository root. Commit changes before starting the next batch.
+The numbered batch folder itself stays on your Mac.
+On macOS, press Command+Shift+Period to show and select the dotfiles in the first batch.
+
+01-project contains 50 files.
+02-examples-part-1 contains 49 files.
+03-examples-part-2 contains 48 files.
+
+These 147 files were exported from the reviewed Git commit. Local environments, caches, credentials, and raw execution logs are excluded.

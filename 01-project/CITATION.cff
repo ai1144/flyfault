@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, cite it alongside NeuroMechFly and Brian 2."
+title: "FLY//FAULT — A Causal Lesion Laboratory for an Embodied Virtual Fly"
+type: software
+version: 0.1.0
+license: MIT
+authors:
+  - name: "FLY//FAULT contributors"
+keywords: [Drosophila, NeuroMechFly, MuJoCo, Brian2, spiking networks, embodied simulation]

@@ -1,0 +1,20 @@
+name: demo
+seeds: [42, 43]
+stimulus_sides: [left, right]
+conditions: [intact, lesion_left, lesion_right, sham_random, rescue, no_neural_control]
+timing:
+  duration_s: 2.0
+  decision_s: 0.02
+  neural_dt_s: 0.0005
+arena:
+  start_xy_mm: [0.0, 0.0]
+  start_yaw_rad: 0.0
+  source_xy_mm: [18.0, 8.0]
+  sigma_mm: 11.0
+  source_radius_mm: 3.0
+  limit_mm: 100.0
+circuit:
+  lesion_fraction: 0.5
+media:
+  fps: 25
+  playback_speed: 0.25
